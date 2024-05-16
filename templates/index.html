@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Rehoboth Investments</h1>
+    <p class="lead">Rehoboth Investment is a project to help to secure present and future stability in families.</p>
+   <!-- <p><a href="http://flask.pocoo.org/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>-->
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Secure</h2>
+        <p>
+            Reboth Investment is a powerful opporunity for you to secure your precious resources as you plan your
+            next steps
+        </p>
+         <!-- <p><a href="http://flask.pocoo.org/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>-->
+    </div>
+    <div><p>Agent Sign In? <a href = "{{ url_for('signin')}}"><b>Sign In</b></a></p>
+
+        </div>
+    <div class="col-md-4">
+        <h2>Own Lands</h2>
+        <p>Investing in land ownership positions you to be in control of your financial freedom</p>
+       <p><a href="/client" class="btn btn-primary btn-large">Secure Land at Faraba Today
+         &raquo;</a
+        ></p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Integrity</h2>
+        <p>Rehoboth Investment is led by a Team of Leaders qualified and proven leaders of Integrity</p>
+       <!-- <p><a href="/client" class="btn btn-primary btn-large">Secure Land at Faraba Today
+         &raquo;</a
+        ></p>-->
+    </div>
+    <div>
+        {{link}}
+        {% with messages = get_flashed_messages() %}
+        {%if messages%}
+        <ul>
+            {% for messages in messages %}
+            {{message}}
+            {%endfor%}
+        </ul>
+        {%endif%}
+        {%endwith%}
+
+        </ul>
+    </div>
+</div>
+
+{% endblock %}

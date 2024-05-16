@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<title>List</title>
+{{info}}
+<br>
+   <table border="1">
+            <thead>
+            <td>First Name</td><td>Last Name</td><td>Phone</td><td>Email</td><td>>lot Number</td><td>Price</td>
+            </thead>
+        {% for row in rows %}
+        <tr>
+            <td>{{row[0]}}</td><td>{{row[1]}}</td><td>{{row[2]}}</td><td>{{row[3]}}</td><td>{{row
+            [4]}}</td><td>
+            {{row[5]}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+<div>
+    <button type="submit" value="Remove" onclick="window.location.href = '/rem';">Remove</button>
+</div>
+<div><a href="/home">Go back to home page</a></div>
+    {% endblock %}
+
+

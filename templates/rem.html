@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div>
+<form action="/delt" method="POST">
+            <div class="form-group">
+                <label for="plot_number">Plot Number to remove:</label>
+                <input type="text" id="plot_number" name="plot_number" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+</div>
+
+{% endblock %}

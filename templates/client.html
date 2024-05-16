@@ -1,0 +1,91 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+<head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    .form-container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+            .form-group input[type="submit"] {
+                background-color: #5cb85c;
+                color: white;
+                cursor: pointer;
+            }
+
+                .form-group input[type="submit"]:hover {
+                    background-color: #4cae4c;
+                }
+</style>
+</head>
+
+    <div class="form-container">
+        <form action="/rehodata" method="post">
+            <div class="form-group">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="plot_number">Plot Number:</label>
+                <input type="text" id="plot_number" name="plot_number" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit">
+            </div> <a href="/signout">Please log out</a>
+        </form>
+    </div>
+<div>
+<div>
+    {% if current_user.is_authenticated %}
+    <h3>You are logged in</h3>
+    {% else %}
+    <h3>You  are NOT logged in</h3>
+    {% endif %}
+</div>
+</div>
+    {% endblock %}
